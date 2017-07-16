@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Módulo | HTML5-CSS3-JS</title>
     <link rel="stylesheet" href="./css/css.css" type="text/css">
     <link rel="stylesheet" href="./css/grid.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="./css/font-awesome.css" type="text/css">
     <script src="./js/jquery-3.2.1.js"></script>
-    <script src="./js/funciones.js"></script>
     <script>
         $(document).ready(function(){
             $('#v_contacto').on('change', function() {
@@ -25,324 +24,341 @@
                 $('#html5-progreso').addClass('html-Animacion');
                 $('#css3-progreso').addClass('css-Animacion');
                 $('#me').addClass('me-Animacion');
-                $('#estudios').addClass('estudios-Animacion');
             });
             $('#estudios').hover(function () {
-                // hacer un flip con los logos
+                $('#contenedor-estudios-padre').addClass('estudios-Animacion');
+            });
+
+            var elemento;
+            $(".navbar-item").mouseenter(function(){
+                elemento = this.id;
+                $('#'+elemento).children('div').addClass('estado');
+            });
+            $(".navbar-item").mouseleave(function(){
+                elemento = this.id;
+                $('#'+ elemento).children('div').removeClass('estado');
+            });
+
+            var hash;
+            $("a").on('click', function(event) {
+
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
+                }
+
             });
 
         });
     </script>
+
+
 </head>
 <body>
-    <header class="header col-12">
+    <header class="header col-12" id="inicio">
     <h1 class="title">WCB</h1>
     <div class="title-img"> </div>
-    <p class="title-cite">Nunquam transferre imber.Nunquam captis mensa. Cur contencio volare Cum calcaria observare, omnes canises amor albus, pius ignigenaes
+    <p class="title-cite">No te asustes de lo que veas !!
     </p>
     </header>
     <nav class="navbar navbar-border col-12 container ">
         <ul class="navbar-list">
-            <li class="navbar-item">
-                <div class=""></div>
-                <a href="">Inicio</a>
+            <li class="navbar-item " id="n1">
+                <div></div>
+                <a href="#inicio">Inicio</a>
             </li>
-            <li class="navbar-item">
-                <a href="" id="quien">Quién Soy</a>
+            <li class="navbar-item" id="n2">
+                <div></div>
+                <a href="#quien-soy">Quién Soy</a>
             </li>
-
-            <li class="navbar-item">
-                <div class=""></div>
-                <a href="">Estudios</a>
+            <li class="navbar-item" id="n3">
+                <div></div>
+                <a href="#estudios">Estudios</a>
             </li>
-            <li class="navbar-item">
-                <a href="">Experiencia</a>
+            <li class="navbar-item" id="n4">
+                <div></div>
+                <a href="#trabajos">Trabajos</a>
             </li>
-            <li class="navbar-item">
-                <a href="">Sobre mí</a>
+            <li class="navbar-item" id="n5">
+                <div></div>
+                <a href="#contacto">Contacto</a>
             </li>
-            <li class="navbar-item">
-                <a href="#Contacto">Contacto</a>
+            <li class="navbar-item" id="n6">
+                <div></div>
+                <a href="#tarea">Tareas</a>
             </li>
         </ul>
-    </nav>   
+    </nav>
+    <main class="container clearfix" >
 
-<main class="container clearfix" >
+        <section class="col-12" id="quien-soy" >
+            <div>
+                <p class="cabecera-seccion">QUIÉN SOY</p>
+            </div>
+            <div class="col-6 about-section">
 
-    <section class="col-12" id="quien-soy" >
-        <div>
-            <p class="cabecera-seccion">QUIÉN SOY</p>
-        </div>
-        <div class="col-6 about-section"> <!-- Poner un display inline-table para responsive -->
+                <p>Mi nombre es Wence Criado, "granaíno" de 29 años, y actualmente mi trabajo se centra en la gestión del Departamento de Soporte Técnico del programa <a href="http://www.netcontrata.es" target="_blank">Netcontrat@</a> en Centro de Formación <a href="http://www.grupo2000.es" target="_blank">Grupo 2000.</a></p>
+                <p>Entre mis funciones se encuentran también la gestión de conferencias online con asesorías laborales a nivel nacional, además de estar en contacto continuo con los técnicos responsables de los Servicios de Formación para el Empleo a nivel nacional.
+                </p>
+                <p>Desde hace unos años descubrí, que me apasiona el mundo de la programación, y desde entonces intento compaginar mi trabajo con aquello con lo que realmente me siento realizado.<br>
+                    <br>
+                    A día de hoy mis conocimientos sobre lenguajes WEB están en continúo progreso e intento cada día poder ampliar conocimientos al respecto. No se que más poner para rellenar hueco ....</p>
 
-            <p>Mi nombre es Wence Criado, "granaíno" de 29 años, y actualmente mi trabajo se centra en la gestión del Departamento de Soporte Técnico del programa <a href="http://www.netcontrata.es" target="_blank">Netcontrat@</a> en Centro de Formación <a href="http://www.grupo2000.es" target="_blank">Grupo 2000.</a></p>
-            <p>Entre mis funciones se encuentran también la gestión de conferencias online con asesorías laborales a nivel nacional, además de estar en contacto continuo con los técnicos responsables de los Servicios de Formación para el Empleo a nivel nacional.<br>
-                Burgus barbatus parma est.Credere recte ducunt ad germanus classis.Ecce.Eheu.Hercle, terror flavum!, tus!Ignigenas ortum in antverpia!
-            </p>
-            <p>Desde hace unos años descubrí, que me apasiona el mundo de la programación, y desde entonces intento compaginar mi trabajo con aquello con lo que realmente me siento realizado.
-                <br>
-                Burgus barbatus parma est.Credere recte ducunt ad germanus classis.Ecce.Eheu.Hercle, terror flavum!, tus!Ignigenas ortum in antverpia!</p>
-
-        </div>
-        <div class="col-6 about-section">
-            <div class="contenedor-progresos">
-                <div class="contenedor-progresos-centrado">
-                    <div id="php" class="formato-progeso">
-                        <div class="base-progreso">
-                            <div id="php-progreso">PHP</div>
+            </div>
+            <div class="col-6 about-section">
+                <div class="contenedor-progresos">
+                    <div class="contenedor-progresos-centrado">
+                        <div id="php" class="formato-progeso">
+                            <div class="base-progreso">
+                                <div id="php-progreso">PHP</div>
+                            </div>
                         </div>
-                    </div>
-                    <div id="html5" class="formato-progeso">
-                        <div class="base-progreso">
-                            <div id="html5-progreso">HTML5</div>
+                        <div id="html5" class="formato-progeso">
+                            <div class="base-progreso">
+                                <div id="html5-progreso">HTML5</div>
+                            </div>
                         </div>
-                    </div>
-                    <div id="css3" class="formato-progeso">
-                        <div class="base-progreso">
-                            <div id="css3-progreso">CSS3</div>
+                        <div id="css3" class="formato-progeso">
+                            <div class="base-progreso">
+                                <div id="css3-progreso">CSS3</div>
+                            </div>
                         </div>
-                    </div>
-                    <div id="JS" class="formato-progeso">
-                        <div class="base-progreso">
-                            <div id="js-progreso">JS</div>
+                        <div id="JS" class="formato-progeso">
+                            <div class="base-progreso">
+                                <div id="js-progreso">JS</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12">
-            <div class="contenedor-logo-padre">
-                <div class="contenedor-logo-hijo">
-                    <img src="./images/wence.jpg" class="logo-quien" id="me" alt="ME">
+            <div class="col-12">
+                <div class="contenedor-logo-padre">
+                    <div class="contenedor-logo-hijo">
+                        <img src="./images/wence.jpg" class="logo-quien" id="me" alt="ME">
+                    </div>
+
                 </div>
 
-            </div>
-
-
-        </div>
-    </section>
-
-    <section class="col-12 section-container" id="estudios">
-        <div>
-            <p class="cabecera-seccion">ESTUDIOS</p>
-        </div>
-        <div class="row-flex container">
-
-            <div class="col-4 estudios-section">
-                <div class="estudios">
-                    <div style="flex:1">
-                        <h2>- FP Grado Superior - </h2>
-                    </div>
-                    <div style="flex:2">
-                        <p>Grado Superior en Desarrollo de Aplicaciones Multiplataforma</p>
-                    </div>
-                <div style="flex:3">
-                    <div class="contenedor-logo-estudios">
-                        <img src="./images/logo-wcb.png" alt="" class="logo-estudios">
-                    </div>
-                    <p>2017 | Instuto FOC</p>
-                </div>
-            </div>
 
             </div>
+        </section>
 
-            <div class="col-4 estudios-section">
-                <div class="estudios">
-                    <div style="flex:1">
-                        <h2>- FP Grado Superior - </h2>
-                    </div>
-                    <div style="flex:2">
-                        <p>Grado Superior en Desarrollo de Aplicaciones Web</p>
-                    </div>
+        <section class="col-12 section-container2" id="estudios">
+            <div>
+                <p class="cabecera-seccion">ESTUDIOS</p>
+            </div>
+            <div class="row-flex container" id="contenedor-estudios-padre" >
+
+                <div class="col-4 estudios-section">
+                    <div class="estudios">
+                        <div style="flex:1">
+                            <h2>- FP Grado Superior - </h2>
+                        </div>
+                        <div style="flex:2">
+                            <p>Grado Superior en Desarrollo de Aplicaciones Multiplataforma</p>
+                        </div>
                     <div style="flex:3">
                         <div class="contenedor-logo-estudios">
-                            <img src="./images/logo-wcb.png" alt="" class="logo-estudios">
+                            <img src="./images/fomento.png" alt="logoFoc" class="logo-estudios">
                         </div>
                         <p>2017 | Instuto FOC</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-4 estudios-section">
-                <div class="estudios">
-                    <div style="flex:1">
-                        <h2>- Máster WebBootcamp  - </h2>
-                    </div>
-                    <div style="flex:2">
-                        <p> Web Startup Engineering Bootcamp </p>
-                    </div>
-                    <div style="flex:3">
-                        <div class="contenedor-logo-estudios">
-                            <img src="./images/logo-wcb.png" alt="" class="logo-estudios">
+                </div>
+
+                <div class="col-4 estudios-section">
+                    <div class="estudios">
+                        <div style="flex:1">
+                            <h2>- FP Grado Superior - </h2>
                         </div>
-                        <p>2017 | KeepCoding</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="col-12 section-container" id="trabajos">
-        <div>
-            <p class="cabecera-seccion">TRABAJOS REALIZADOS</p>
-        </div>
-        <div class="col-6 about-section contenedor-padre-video">
-            <div class="contenedor-hijo-video">
-                <video  controls id="video">
-                    <!--<source src="./video/batman.mp4" type="video/mp4">-->
-                </video>
-            </div>
-        </div>
-        <div class="col-6 about-section">
-            <div class="col-4 trabajos-section-slider" style="width: 100%;">
-                <div class="boton-slider" style="flex:1.5">
-                    <button onclick="plusDivs(-1)">
-                        &#10094;
-                    </button>
-                </div>
-                <div style="flex:35">
-                    <div class="contenedor-padre-slider">
-                        <div class="contenedor-hijo-slider">
-                            <img class="slider" src="images/home.jpg" alt="imagen1" >
-                            <img class="slider" src="images/logo-wcb.png" alt="imagen2" hidden>
-                            <img class="slider" src="images/logowence.png" alt="imagen3" hidden>
-                            <img class="slider" src="images/wence.jpg" alt="imagen4" hidden>
+                        <div style="flex:2">
+                            <p>Grado Superior en Desarrollo de Aplicaciones Web</p>
+                        </div>
+                        <div style="flex:3">
+                            <div class="contenedor-logo-estudios">
+                                <img src="./images/fomento.png" alt="logoFoc" class="logo-estudios">
+                            </div>
+                            <p>2017 | Instuto FOC</p>
                         </div>
                     </div>
                 </div>
-                <div class="boton-slider" style="flex: 1.5">
-                    <button onclick="plusDivs(-1)">
-                        &#10095;
-                    </button>
+
+                <div class="col-4 estudios-section">
+                    <div class="estudios">
+                        <div style="flex:1">
+                            <h2>- Máster WebBootcamp  - </h2>
+                        </div>
+                        <div style="flex:2">
+                            <p> Web Startup Engineering Bootcamp </p>
+                        </div>
+                        <div style="flex:3">
+                            <div class="contenedor-logo-estudios">
+                                <img src="./images/keepcoding.png" alt="logoKeep" class="logo-estudios">
+                            </div>
+                            <p>2017 | KeepCoding</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="col-12 section-container" id="contacto">
-        <div>
-            <p class="cabecera-seccion">CONTACTO</p>
-        </div>
-
-                    <div class="form">
-
-                         <form name="form-contacto" method="POST" onsubmit="return contarPalabras()" >
-                            <div class="form-row">
-                                <label for="nombre">Nombre:</label>
-                                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-                            </div>
-
-                            <div class="form-row">
-                                <label for="apellidos">Apellidos:</label>
-                                <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
-                            </div>
-
-                            <div class="form-row">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" placeholder="name@company.com"
-                                       pattern="[A-Za-z0-9\.\+]+@[A-Za-z0-9]+\.[A-Za-z0-9\.]+" required>
-                            </div>
-                             <div class="form-row">
-                                 <label for="t_contacto">Teléfono</label>
-                                 <input type="tel" id="t_contacto" pattern="\d{9}" required>
-                             </div>
-
-
-                            <div class="form-row">
-                                <div>¿Cómo me has conocido?</div>
-                            </div>
-                        <div class="form-row">
-                                <label for="v_contacto"></label>
-                                <select name="vias_contacto" id="v_contacto">
-                                    <option selected disabled>Elige una opción</option>
-                                    <option value="Git">GitHub</option>
-                                    <option value="Google">Google</option>
-                                    <option value="Facebook">Facebook</option>
-                                    <option value="otros" id="otros">Otros</option>
-                                </select>
-                        </div>
-                        <div class="form-row">
-
-                            <textarea cols="40" rows="5" class="comentario" id="otros-comentario" hidden></textarea>
-                        </div>
-
-                            <div class="form-row">
-                                <label for="comentario-libre">Comentario Libre</label>
-                            </div>
-                        <div class="form-row">
-                            <textarea cols="40" rows="5" id="comentario-libre" class="otros-comentario"></textarea>
-                            </div>
-
-                            <div class="form-row">
-                                <button type="submit" id="Enviar">Enviar</button>
-                            </div>
-                             <div id="contacto-recibido">
-                                 Tus datos han sido "enviados" con éxito
-                             </div>
-
-                        </form>
+        <section class="col-12 section-container" id="trabajos">
+            <div>
+                <p class="cabecera-seccion">TRABAJOS REALIZADOS</p>
+            </div>
+            <div class="col-6 about-section contenedor-padre-video">
+                <div class="contenedor-hijo-video">
+                    <video  controls id="video">
+                        <source src="./video/video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="col-6 about-section">
+                <div class="col-4 trabajos-section-slider" style="width: 100%;">
+                    <div class="boton-slider">
+                        <button onclick="plusDivs(-1)">
+                            &#10094;
+                        </button>
                     </div>
+                    <div style="flex:35">
+                        <div class="contenedor-padre-slider">
+                            <div class="contenedor-hijo-slider">
+                                <img class="slider" src="images/home.jpg" alt="imagen1" >
+                                <img class="slider" src="images/logo-wcb.png" alt="imagen2" hidden>
+                                <img class="slider" src="images/logowence.png" alt="imagen3" hidden>
+                                <img class="slider" src="images/wence.jpg" alt="imagen4" hidden>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boton-slider" style="flex: 1.5">
+                        <button id="bslide" onclick="plusDivs(-1)">
+                            &#10095;
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-12 section-container2" id="contacto">
+            <div>
+                <p class="cabecera-seccion">CONTACTO</p>
+            </div>
+
+                        <div class="form">
+
+                             <form name="form-contacto" method="POST" onsubmit="return contarPalabras()" >
+                                <div class="form-row">
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="apellidos">Apellidos:</label>
+                                    <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" placeholder="name@company.com"
+                                           pattern="[A-Za-z0-9\.\+]+@[A-Za-z0-9]+\.[A-Za-z0-9\.]+" required>
+                                </div>
+                                 <div class="form-row">
+                                     <label for="t_contacto">Teléfono</label>
+                                     <input type="tel" id="t_contacto" pattern="\d{9}" required>
+                                 </div>
+
+
+                                <div class="form-row">
+                                    <div>¿Cómo me has conocido?</div>
+                                </div>
+                            <div class="form-row">
+                                    <label for="v_contacto"></label>
+                                    <select name="vias_contacto" id="v_contacto">
+                                        <option selected disabled>Elige una opción</option>
+                                        <option value="Git">GitHub</option>
+                                        <option value="Google">Google</option>
+                                        <option value="Facebook">Facebook</option>
+                                        <option value="otros" id="otros">Otros</option>
+                                    </select>
+                            </div>
+                            <div class="form-row">
+
+                                <textarea cols="40" rows="5" class="comentario" id="otros-comentario" hidden></textarea>
+                            </div>
+
+                                <div class="form-row">
+                                    <label for="comentario-libre">Comentario Libre</label>
+                                </div>
+                            <div class="form-row">
+                                <textarea cols="40" rows="5" id="comentario-libre" class="otros-comentario"></textarea>
+                                </div>
+
+                                <div class="form-row">
+                                    <button type="submit" id="Enviar">Enviar</button>
+                                </div>
+                                 <div id="contacto-recibido">
+                                     Tus datos han sido "enviados" con éxito
+                                 </div>
+
+                            </form>
+                        </div>
 
         </section>
 
-    <section class="row section-container" id="tareas">
-        <div>
-            <p class="cabecera-seccion">TAREAS</p>
-        </div>
-        <div>
-            <div class="col-6">
-                <h3>Añadir nueva tarea</h3>
-                <form id="form-tareas">
-                    <input type="text" id="newTaskName" name="name" placeholder="Nueva tarea..." required><span id="errorAjax" hidden>Una tarea en blanco no ...</span>
-                    <br>
-                    <br>
-                    <button id="sendNewTask">Enviar</button>
-                </form>
+        <section class="row section-container" id="tareas">
+            <div id="tarea">
+                <p class="cabecera-seccion">TAREAS</p>
             </div>
+            <div>
+                <div class="col-6">
+                    <h3>Añadir nueva tarea</h3>
+                    <form id="form-tareas">
+                        <input type="text" id="newTaskName" name="name" placeholder="Nueva tarea..." required><span id="errorAjax" hidden>Una tarea en blanco no ...</span>
+                        <br>
+                        <br>
+                        <button id="sendNewTask" class="btareas">Enviar</button>
+                    </form>
+                </div>
 
-            <div class="col-6 contenedor-padre-tareas">
-                <div class="contenedor-hijo-tareas">
-                    <h3>Tareas pendientes</h3>
+                <div class="col-6 contenedor-padre-tareas">
+                    <div class="contenedor-hijo-tareas">
+                        <h3>Tareas pendientes</h3>
 
-                    <div>
-                        <table id="taskContainer">
+                        <div>
+                            <table id="taskContainer">
 
 
 
-                        </table>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-</main>
-
-
-
-
-<footer class="footer">
-    <div>
-        <span>logo</span><span>telefono</span>
+    </main>
+    <footer class="footer">
+    <div class="datos-contacto">
+        <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span><span class="span-derecho"><a href="mailto:wence74@gmail.com?Subject=Contacto" target="_top">wence74@gmail.com</a></span>
     </div>
-    <div>
-        <span>logo</span><span>correo</span>
+    <div class="datos-contacto">
+        <span><i class="fa fa-mobile" aria-hidden="true"></i></span><span class="span-derecho"><a href="tel:+34123123123">+34 123-123-123</a></span>
     </div>
-    <div>
+    <div class="datos-contacto">
         Wence Criado &copy; 2017 wCriado
     </div>
 
 </footer>
-    <script src="../js/ajax.js"></script>
-    <script src="../js/form.js"></script>
-
-
-
-
-    <script>
-
-    </script>
-
+    <script src="./js/ajax.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/funciones.js"></script>
+    <script src="./js/contarPalabras.js"></script>
 
 
 

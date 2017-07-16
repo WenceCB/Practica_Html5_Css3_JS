@@ -8,7 +8,7 @@ var drawTasks = function() {
     } else {
         var contentToAdd = '';
         for (var i = 0; i < tasks.length; i++) {
-            contentToAdd += '<tr><td class="task-item">' + tasks[i].name + '<button class="deleteTask" ' +
+            contentToAdd += '<tr><td class="task-item">' + tasks[i].name + '<button class="btareas" ' +
                 'data-task-id="' + tasks[i].id + '">Eliminar</button></td></tr>'
         }
         $('#taskContainer').append(contentToAdd);
