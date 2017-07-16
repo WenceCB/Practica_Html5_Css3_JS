@@ -2,8 +2,9 @@
  * Created by Wence on 16/7/17.
  */
 
-function contarPalabras() {
+// Función para contar el número de palabras, elimino los espacios en blanco y los descuento del total del array
 
+function contarPalabras() {
 
     var comentario = document.getElementById('comentario-libre');
     var filtrado = comentario.value.split(" ");

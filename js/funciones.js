@@ -2,7 +2,7 @@
  * Created by Wence on 15/7/17.
  */
 
-// Galeria
+// Función para trabajar con la Galería y hacer efecto de slider
 
 var slideIndex = 1;
 showDivs(slideIndex);

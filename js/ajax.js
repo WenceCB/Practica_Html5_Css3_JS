@@ -1,3 +1,6 @@
+
+// Función para trabajar con peticiones ajax
+
 var tasks = [];
 
 var drawTasks = function() {

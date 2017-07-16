@@ -1,6 +1,9 @@
 /**
  * Created by Wence on 9/7/17.
  */
+
+ // Función para simular el envío de información del contacto
+
 var form = document.getElementsByTagName('form')[0];
 console.log(form);
 
