@@ -271,14 +271,16 @@ body {
 }
 .contenedor-padre-video{
     display: flex;
-    justify-content: center;
+    justify-content:center;
+    height: 100%;
 }
 .contenedor-hijo-video{
-    align-self: center;
+    display: flex;
+    justify-content:center;
+    width: 60%;
+    
 }
-
-#video{
-    height: 100%;
+#video{    
     width: 100%;
 }
 .trabajos-section-slider{
